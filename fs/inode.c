@@ -55,6 +55,9 @@
 
 static unsigned int i_hash_mask __read_mostly;
 static unsigned int i_hash_shift __read_mostly;
+/*global memory inode hash list,if inode isnt memory hash list,create new inode,and set inode->i_ino,inode->i_stats=I_NEW;
+  inode be add to inode_hashtable.
+*/
 static struct hlist_head *inode_hashtable __read_mostly;
 static __cacheline_aligned_in_smp DEFINE_SPINLOCK(inode_hash_lock);
 
